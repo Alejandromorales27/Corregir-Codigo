@@ -1,8 +1,8 @@
 var formulario = document.querySelector("#form")
 
 formulario.onsubmit = function(e) {
-
-  e.prevent();
+  /* puse el default en e.prevent */
+  e.preventDefault();
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -55,16 +55,18 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+/*se quito el added y se dejo el add*/
+elementoLista.classList.add("elemento-lista")
 lista.appendChild(elementoLista)
 
 var spanNombre = document.createElement("span")
 var inputNombre = document.createElement("input")
 var espacio = document.createElement("br")
 spanNombre.textContent = "Nombre: "
+/* se borraron 3 lineas ya que el nombre salia dos veces
 inputNombre.value = nombre 
 elementoLista.appendChild(spanNombre)
-elementoLista.appendChild(inputNombre)
+elementoLista.appendChild(inputNombre)*/
 elementoLista.appendChild(espacio)
 
 function crearElemento(descripcion, valor) {
